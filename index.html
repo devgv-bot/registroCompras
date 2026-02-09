@@ -2,6 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- RESPONSIVE OBLIGATORIO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Registro de Compras</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -27,18 +30,15 @@
         <!-- Tipo de pago -->
         <label>Tipo de pago</label>
         <div class="toggle-group">
-            <input type="radio" name="pago" id="tarjeta" value="Tarjeta" required>
+            <input type="radio" name="pago" id="tarjeta" value="Tarjeta" checked>
             <label for="tarjeta" class="toggle-btn">💳 Tarjeta</label>
 
             <input type="radio" name="pago" id="efectivo" value="Efectivo">
             <label for="efectivo" class="toggle-btn">💵 Efectivo</label>
         </div>
 
+        <!-- CAPTURA DESACTIVADA -->
         <!--
-        =============================
-        CAPTURA DESACTIVADA TEMPORAL
-        =============================
-
         <label for="factura">Captura de la factura</label>
         <input type="file" id="factura" accept="image/*">
         -->
