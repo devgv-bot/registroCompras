@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Compras</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🍽️ Registro de Compras</h1>
+
+    <form id="facturaForm" enctype="multipart/form-data">
+
+        <!-- Fecha -->
+        <label for="fecha">Fecha de compra</label>
+        <input type="date" id="fecha" required>
+
+        <!-- Monto -->
+        <label for="monto">Monto de la compra (₡)</label>
+        <input type="number" id="monto" placeholder="Ej: 3500" min="0" required>
+
+        <!-- Establecimiento -->
+        <label for="establecimiento">Establecimiento</label>
+        <input type="text" id="establecimiento" placeholder="Nombre del local" required>
+
+        <!-- Tipo de pago -->
+        <label>Tipo de pago</label>
+        <div class="toggle-group">
+            <input type="radio" name="pago" id="tarjeta" value="Tarjeta" required>
+            <label for="tarjeta" class="toggle-btn">💳 Tarjeta</label>
+
+            <input type="radio" name="pago" id="efectivo" value="Efectivo">
+            <label for="efectivo" class="toggle-btn">💵 Efectivo</label>
+        </div>
+
+        <!-- Captura de factura -->
+        <label for="factura">Captura de la factura</label>
+        <input type="file" id="factura" accept="image/*" required>
+
+        <!-- Botones -->
+        <div class="buttons">
+            <button type="submit">💾 Guardar</button>
+            <button type="button" id="btnReporte">📊 Ver Reporte</button>
+            <button type="button" id="btnCorreo">✉️ Enviar por correo</button>
+        </div>
+
+    </form>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

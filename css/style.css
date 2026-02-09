@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    padding: 20px;
+}
+
+.container {
+    max-width: 450px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Toggle buttons */
+.toggle-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.toggle-group input[type="radio"] {
+    display: none;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.toggle-group input[type="radio"]:checked + .toggle-btn {
+    background: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+/* Botones */
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button[type="submit"] {
+    background: #4CAF50;
+    color: white;
+}
+
+#btnReporte {
+    background: #2196F3;
+    color: white;
+}
+
+#btnCorreo {
+    background: #FF9800;
+    color: white;
+}
