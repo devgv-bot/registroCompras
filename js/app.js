@@ -1,44 +1,27 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbwhKMSLEBqU2c5327-epUsmCKneTvJP_eGD55no3vqLhMnR58pF4UC_Jn2bVu3vKdVt/exec";
+document.getElementById('facturaForm').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-document.getElementById('facturaForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
+  const data = {
+    fecha: document.getElementById('fecha').value,
+    monto: document.getElementById('monto').value,
+    establecimiento: document.getElementById('establecimiento').value,
+    pago: document.querySelector('input[name="pago"]:checked').value
+  };
 
-    const facturaFile = document.getElementById('factura').files[0];
-
-    if (!facturaFile) {
-        alert('Debe adjuntar la captura de la factura');
-        return;
+  fetch('https://script.google.com/macros/s/AKfycbxGhCSK54DKDZi_YuBj9-lX_8wxtaJW6Y8IXc96YhMJALGzJcefrJFSyOrHE3cnr4WM/exec', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(resp => {
+    if (resp.status === 'ok') {
+      alert('✅ Compra registrada');
+      document.getElementById('facturaForm').reset();
+    } else {
+      alert('❌ Error: ' + resp.message);
     }
-
-    const data = {
-        fecha: document.getElementById('fecha').value,
-        monto: document.getElementById('monto').value,
-        establecimiento: document.getElementById('establecimiento').value,
-        pago: document.querySelector('input[name="pago"]:checked').value,
-        factura: facturaFile.name
-    };
-
-    try {
-        await fetch(API_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: JSON.stringify(data)
-        });
-
-        alert('✅ Compra registrada correctamente');
-        document.getElementById('facturaForm').reset();
-
-    } catch (error) {
-        alert('❌ Error enviando los datos');
-        console.error(error);
-    }
-});
-
-document.getElementById('btnReporte').addEventListener('click', () => {
-    alert('Reporte pendiente de implementar');
-});
-
-document.getElementById('btnCorreo').addEventListener('click', () => {
-    alert('Envío de correo pendiente de implementar');
-
+  })
+  .catch(() => {
+    alert('❌ Error de conexión con el servidor');
+  });
 });
