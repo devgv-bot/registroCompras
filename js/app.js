@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbzTPOEIITfrZZrwf2FzMSDaduOfI0LTFSyxAejZECZMfnHcrFZh1-4pEDvYSJDXX5ja/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbwhKMSLEBqU2c5327-epUsmCKneTvJP_eGD55no3vqLhMnR58pF4UC_Jn2bVu3vKdVt/exec";
 
 document.getElementById('facturaForm').addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -40,4 +40,5 @@ document.getElementById('btnReporte').addEventListener('click', () => {
 
 document.getElementById('btnCorreo').addEventListener('click', () => {
     alert('Envío de correo pendiente de implementar');
+
 });
